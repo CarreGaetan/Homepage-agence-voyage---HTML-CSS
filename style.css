@@ -256,6 +256,7 @@ body {
     background-color: #F2F2F2;
     padding: 30px;
     border-radius: 15px;
+    width: 80%;
   }
 
 /* Style du container/grid des cards */
@@ -273,14 +274,19 @@ body {
     align-items: flex-start;
     background-color: white;
     border-radius: 20px;
-    width: 250px;
-    height: 207px;
+    height: fit-content;
     gap: 4px;
+    padding: 0 0 15px 0;
+    min-width: 180px;
 }
 
 /* Style du texte des cards */
-.grid-item h3, p {
+.grid-item h3 {
     margin: 0 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 80%;
 }
 
 /* Style de chaque icone étoile des cards */
@@ -303,8 +309,9 @@ body {
 .offer-text-container {
     display: flex;
     flex-direction: column;
-    padding: 0 15px;
+    padding: 0 15px 0 15px;
     gap: 8px;
+    width: 100%;
 }
 
 /* Style du conteneur des etoiles */
@@ -335,6 +342,7 @@ body {
     border-radius: 15px;
     gap: 30px;
     padding: 30px;
+    width: 37%;
 }
 
 /* Style du conteneur des cards */
@@ -350,6 +358,7 @@ body {
     background-color: white;
     border-radius: 20px;
     height: 146px;
+    min-width: 195px;
 }
 
 /* Style de l'image des cards */
@@ -455,23 +464,33 @@ footer div {
     /***** SECTION 2 : SECTION GROUP *****/
 
     /* Alignement vertival des 2 blocs dans section-group */
-    #section-group {
+     #section-group {
         flex-direction: column;
+    } 
+
+    .offers-main {
+        width: 100%;
+        min-width: 705px;
+    }
+
+    .offers-sponsored {
+        width: 100%;
+        min-width: 705px;
     }
 
     /* Positionner le titre au dessus des filtres, à gauche */
-    .filter-bloc {
+     .filter-bloc {
         flex-direction: column;
         align-items:flex-start;
-    }
+    } 
 
     /* alignement vertical des cards */
-    .offers-sponsored-item {
+     .offers-sponsored-item {
         flex-direction: row;
     }
 
     /* Redimension égale des cards (largeur) */
-    .offers-sponsored-item .card-link {
+     .offers-sponsored-item .card-link {
         width: 33%;
     }
 
@@ -479,15 +498,14 @@ footer div {
 
     /* Redimension de la hauteur des images des cards */
 
-    .activites-cards-container .card-link {
+     .activites-cards-container .card-link {
         height: 270px;
     }
 
     .card-item img {
         height: 200px;
     }
-}
-
+} 
 /* Responsive mobile */
 @media screen and (min-width: 320px) and (max-width: 768px) {
 
@@ -595,6 +613,7 @@ footer div {
         border-radius: 0px;
         gap: 15px;
         padding: 20px;
+        width: 100%;
     }
 
     /* Changer grid en flex pour afficher les cards en vertical */
@@ -633,6 +652,7 @@ footer div {
         order: 1;
         gap: 15px;
         border-radius: 0px;
+        width: 100%;
     }
 
     .activites-cards-container {

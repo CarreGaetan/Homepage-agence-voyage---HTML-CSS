@@ -10,6 +10,10 @@ a {
     color: black;
 }
 
+a:active {
+    color: #0065FC;
+}
+
 h1 {
     font-size: 22px;
     margin: 0px;
@@ -43,6 +47,43 @@ body {
     min-width: 320px;
 }
 
+.fa-magnifying-glass {
+    color: #fff;
+}
+
+.fa-money-bill {
+    color: #0065FC;
+}
+
+.fa-person {
+    color: #0065FC;
+}
+
+.fa-heart {
+    color: #0065FC;
+}
+
+.fa-fire {
+    color: #0065FC;
+}
+
+.fa-chart-line {
+    color: #0065FC;
+}
+
+.fa-star {
+    color: #0065FC;
+    height: 13px;
+}
+
+.fa-star:before {
+    line-height: normal;
+}
+
+.empty-star {
+    color: #F2F2F2;
+}
+
 /***** BARRE DE NAVIGATION ******/
 
 /* Style de la barre de navigation */
@@ -67,32 +108,23 @@ body {
     margin: 0px;
 }
 
-/* Style des liens de navigation */
+/* Style de base des liens */
 .nav-menu a {
-    text-decoration: none;
-    color: #0065FC;
-    font-size: 16px;
-    padding: 0px 0;
-}
-
-/* Style du conteneur du lien "hébergement */
-.hebergement-link {
-    display: flex;
-    padding: 16px 0;
-    border-top: 3px solid #0065FC;
-}
-
-/* Style du conteneur du lien "activités" */
-.activites-link {
-    padding: 19px 0;
-}
-
-/* Style du texte "activités" */
-.activites-link a {
-    padding: 19px 0;
     color: black;
+    text-decoration: none;
+    padding: 15px 0 ;
+    display: block;
+    border-top: 3px solid rgb(255, 255, 255);
 }
 
+/* Utilisation de :target pour appliquer le style du lien actif */
+.nav-menu a.nav-link-active {
+    color: #0065FC;
+    border-top: 3px solid #0065FC;
+    padding-top: 15px;
+    box-sizing: border-box;
+}
+ 
                         /***** SECTION 1 : INFO-GROUP *****/
 
 /* Style de la section 1, info-group */
@@ -152,7 +184,7 @@ body {
     justify-content: center;
     background-color: #F2F2F2;
     width: 50px;
-    height: 49px;
+    height: 52px;
     border-radius: 15px 0px 0px 15px;
     border: 1px #F2F2F2 solid;
 }
@@ -282,7 +314,8 @@ body {
 
 /* Style du texte des cards */
 .grid-item h3 {
-    margin: 0 0;
+    margin: 0px 0px;
+    padding: 0;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -308,8 +341,10 @@ body {
 /* Style du container du texte des cards */
 .offer-text-container {
     display: flex;
+    justify-content: space-evenly;
     flex-direction: column;
     padding: 0 15px 0 15px;
+    height: 60px;
     gap: 8px;
     width: 100%;
 }
@@ -317,6 +352,8 @@ body {
 /* Style du conteneur des etoiles */
 .stars-container {
     display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
                         /***** BLOC 2, Offers/sponsored */
@@ -376,7 +413,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 10px 5px 5px 15px;
+    padding: 10px 5px 10px 15px;
 }
 
 /* Style du texte des cards */
@@ -386,10 +423,9 @@ body {
     gap: 5px;
 }
 
-/* Style des étoiles des cards */
-.sponsored-etoiles .etoile {
-    height: 12px;
-    width: 12px;
+.sponsored-etoiles {
+    display: flex;
+
 }
 
                         /***** SECTION 3, Section Activités *****/
@@ -436,7 +472,7 @@ body {
     margin: 0;  
 }
 
-/***** FOOTER *****/
+                                /***** FOOTER *****/
 
 /* Style du footer de la page */
 footer {
@@ -550,28 +586,35 @@ footer div {
     }
 
     .nav-menu a {
-        text-align: center;
+        border-top: none;
+    }
+    
+    .activites-link {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        border-bottom: 3px solid #D9D9D9;
+        border-top: none;
     }
 
     .hebergement-link {
+        justify-content: center;
+        display: flex;
         flex: 1;
         border-top: none;
         border-bottom: #0065FC solid 3px;
-        justify-content: center;
+        color: #0065FC;
     }
 
-    .activites-link {
-        flex: 1;
-        justify-content: center;
-        border-bottom: #f2f2f2 solid 3px;
-        padding: 16px 0;
-        text-align: center;
+    /* Utilisation de :target pour appliquer le style du lien actif */
+    .nav-menu a.nav-link-active {
+        border-top: none;
     }
 
     /* Disposition du titre et des éléments filtres */
     .filter-bloc {
         flex-direction: column;
-        align-items:flex-start;
+        align-items: flex-start;
     }
 
     /* Traitement de l'icone localisation et de son conteneur */

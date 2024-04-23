@@ -10,10 +10,6 @@ a {
     color: black;
 }
 
-a:active {
-    color: #0065FC;
-}
-
 h1 {
     font-size: 22px;
     margin: 0px;
@@ -24,7 +20,6 @@ h2 {
     margin: 0px;
     padding: 0px;
 }
-
 
 h3 {
     font-size: 16px;
@@ -51,29 +46,8 @@ body {
     color: #fff;
 }
 
-.fa-money-bill {
+.fa-money-bill, .fa-person, .fa-heart, .fa-fire, .fa-chart-line, .fa-star {
     color: #0065FC;
-}
-
-.fa-person {
-    color: #0065FC;
-}
-
-.fa-heart {
-    color: #0065FC;
-}
-
-.fa-fire {
-    color: #0065FC;
-}
-
-.fa-chart-line {
-    color: #0065FC;
-}
-
-.fa-star {
-    color: #0065FC;
-    height: 13px;
 }
 
 .fa-star:before {
@@ -110,19 +84,36 @@ body {
 
 /* Style de base des liens */
 .nav-menu a {
-    color: black;
     text-decoration: none;
     padding: 15px 0 ;
     display: block;
     border-top: 3px solid rgb(255, 255, 255);
 }
 
-/* Utilisation de :target pour appliquer le style du lien actif */
-.nav-menu a.nav-link-active {
+/* Style des liens au survol de la souris */
+.nav-menu a:hover {
     color: #0065FC;
     border-top: 3px solid #0065FC;
+}
+
+/* Style des liens au clic de la souris */
+.nav-menu a:active {
+    color: #0065FC;
     padding-top: 15px;
     box-sizing: border-box;
+    border-top: solid 3px #0065FC;
+}
+
+/* Style des liens qui sont focus à la souris */
+.nav-menu a:focus {
+    border-top: solid 3px #0065FC;
+    color: #0065FC;
+}
+
+/* Style des liens qui sont target en fonction de l'id */
+.nav-menu a:target {
+    border-top: solid 3px #0065FC;
+    color: #0065FC;
 }
  
                         /***** SECTION 1 : INFO-GROUP *****/
@@ -425,7 +416,6 @@ body {
 
 .sponsored-etoiles {
     display: flex;
-
 }
 
                         /***** SECTION 3, Section Activités *****/
@@ -585,11 +575,18 @@ footer div {
         gap: 0px;
     }
 
+    /* Retirer la bordure invisible des liens de navigation*/
     .nav-menu a {
         border-top: none;
     }
+
+    .nav-menu a:hover {
+        color: #0065FC;
+        border-top: none;
+    }
     
-    .activites-link {
+    /* Style du container du lien de navigation "activité" */
+    .activites-link,.hebergement-link {
         display: flex;
         justify-content: center;
         flex: 1;
@@ -597,14 +594,25 @@ footer div {
         border-top: none;
     }
 
-    .hebergement-link {
-        justify-content: center;
+    .activites-link:hover, .hebergement-link:hover {
         display: flex;
+        justify-content: center;
         flex: 1;
+        border-bottom: 3px solid #0065FC;
         border-top: none;
-        border-bottom: #0065FC solid 3px;
-        color: #0065FC;
     }
+
+    .activites-link:target, .hebergement-link:target {
+        border-bottom: 3px solid #0065FC;
+        border-top: none;
+    }
+
+    .activites-link:active,.hebergement-link:active {
+        border-bottom: 3px solid #0065FC;
+    }
+
+    /* Style du container du lien de navigation "hebergement" */
+    
 
     /* Utilisation de :target pour appliquer le style du lien actif */
     .nav-menu a.nav-link-active {

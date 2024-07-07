@@ -24,6 +24,7 @@ h2 {
 h3 {
     font-size: 16px;
     margin: 0;
+    text-overflow: ellipsis;
 }
 
 p {
@@ -337,7 +338,7 @@ body {
     justify-content: space-evenly;
     flex-direction: column;
     padding: 0 15px 0 15px;
-    height: 60px;
+    height: 65px;
     gap: 8px;
     width: 100%;
 }
@@ -450,6 +451,14 @@ body {
     border-radius: 20px;
 }
 
+.activites-cards-container .card-item {
+    height: fit-content;
+    text-overflow: ellipsis;
+    max-height: 442px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
 /* Style de l'image des cards */
 .card-item img {
     width: 100%;
@@ -461,7 +470,9 @@ body {
 /* Style de texte h3 des cards */
 .card-item h3 {
     padding: 20px 19px;
-    margin: 0;  
+    text-overflow: ellipsis;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
                                 /***** FOOTER *****/
@@ -536,6 +547,12 @@ footer div {
 
     .card-item {
         width: 100%;
+    }
+
+    .card-item h3 {
+        font-size: 14px;
+        text-overflow: ellipsis;
+        padding: 15px;
     }
 } 
 /* Responsive mobile */
